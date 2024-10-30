@@ -2,15 +2,15 @@ You can create an alias in PowerShell by adding a function to your profile. Here
 
 Open your PowerShell profile. You can edit it by running:
 
-powershell
-Copy code
+```
 notepad $PROFILE
+```
+
 If the profile file doesn’t exist, this command will create it.
 
 Add the following function to your profile file:
 
-powershell
-Copy code
+```
 function touch {
     param (
         [string]$Path
@@ -24,9 +24,12 @@ function touch {
         New-Item -Path $Path -ItemType File | Out-Null
     }
 }
+```
+
 Save and close the file, then reload your profile to apply the change:
 
-powershell
-Copy code
+```
 . $PROFILE
+```
+
 Now you can use touch "filename.txt" in PowerShell to create a new file or update the timestamp of an existing file.
